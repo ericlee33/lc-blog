@@ -5,6 +5,9 @@ module.exports = {
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
   title: 'Vuepress Docs Boilerplate',
+
+  base: '/lc-blog/',
+
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
