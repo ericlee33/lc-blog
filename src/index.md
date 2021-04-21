@@ -2,14 +2,14 @@
 home: true
 heroImage: https://v1.vuepress.vuejs.org/hero.png
 tagline: 
-actionText: Quick Start →
-actionLink: /guide/
+actionText: Let's start →
+actionLink: /leetcode/
 features:
-- title: Feature 1 Title
-  details: Feature 1 Description
-- title: Feature 2 Title
-  details: Feature 2 Description
-- title: Feature 3 Title
-  details: Feature 3 Description
-footer: Made by  with ❤️
+# - title: Feature 1 Title
+#   details: Feature 1 Description
+# - title: Feature 2 Title
+#   details: Feature 2 Description
+- title: Secret Base
+  details: I'm so glad that you've find the treasures
+footer: Made by Eric with ❤️
 ---

@@ -1,21 +1,22 @@
 {
   "name": "my-lc-blog",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
-  "authors": {
-    "name": "",
-    "email": ""
-  },
   "repository": "/my-lc-blog",
   "scripts": {
     "dev": "vuepress dev src",
     "docs:build": "vuepress build src",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "transform:js": "node transformJsToMd.js"
   },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.41",
-    "vuepress": "^1.5.3"
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-auto-sidebar": "^2.2.2"
+  },
+  "dependencies": {
+    "vuepress-sidebar-atuo": "^1.0.4"
   }
 }
