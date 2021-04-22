@@ -59,7 +59,7 @@ class Js2MdTransformer {
         /**
          * 拼接js为高亮md代码块
          */
-        jsCode = '```js\n' + jsCode + '```\n';
+        jsCode = `---\ntitle: ${parsedPath.name}\n---\n` +'```js\n' + jsCode + '```\n';
 
         fs.writeFileSync(
             path.join(__dirname, config.destDir, config.jsDir, `${parsedPath.name}.md`),

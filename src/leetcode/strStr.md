@@ -1,3 +1,6 @@
+---
+title: strStr
+---
 ```js
 /**
  * @param {string} haystack
