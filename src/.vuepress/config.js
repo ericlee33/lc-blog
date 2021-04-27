@@ -1,5 +1,13 @@
 const { description } = require('../../package');
-const {getChildren} = require("vuepress-sidebar-atuo")
+const { getChildren } = require('vuepress-sidebar-atuo');
+
+const sortFn = (a, b) => {
+    const lastA = a.filename.split('.')[0];
+    const lastB = b.filename.split('.')[0];
+
+    return parseInt(lastA) > parseInt(lastB) ? 1 : -1;
+};
+
 module.exports = {
     /**
      * Ref：https://v1.vuepress.vuejs.org/config/#title
@@ -60,6 +68,14 @@ module.exports = {
     plugins: [
         '@vuepress/plugin-back-to-top',
         '@vuepress/plugin-medium-zoom',
-        'vuepress-plugin-auto-sidebar',
+        [
+            'vuepress-plugin-auto-sidebar',
+            {
+                sort: {
+                    mode: 'custom',
+                    fn: sortFn,
+                },
+            },
+        ],
     ],
 };
