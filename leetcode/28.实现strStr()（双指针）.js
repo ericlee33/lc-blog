@@ -3,16 +3,6 @@
  * @param {string} needle
  * @return {number}
  */
-function log(str) {
-    return function(target, name, descriptor) {
-        const oldValue = descriptor.value
-        descriptor.value = function() {
-            console.log(str)
-        }
-        return descriptor
-    }
-}
-@log('123')
 var strStr = function(haystack, needle) {
     let left = 0 , right = 0
     while(left < haystack.length && right < needle.length) {
