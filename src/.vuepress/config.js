@@ -53,6 +53,10 @@ module.exports = {
                 link: '/jzoffer/',
             },
             {
+                text: '自定义',
+                link: '/custom/',
+            },
+            {
                 text: 'github',
                 link: 'https://github.com/ericlee33',
             },
