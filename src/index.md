@@ -10,6 +10,6 @@ features:
 # - title: Feature 2 Title
 #   details: Feature 2 Description
 - title: Secret Base
-  details: I'm so glad that you've find the treasures
+  details: I'm so glad that you've found the treasures
 footer: Made by Eric with ❤️
 ---

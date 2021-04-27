@@ -49,6 +49,10 @@ module.exports = {
                 link: '/leetcode/',
             },
             {
+                text: '剑指offer',
+                link: '/jzoffer/',
+            },
+            {
                 text: 'github',
                 link: 'https://github.com/ericlee33',
             },
