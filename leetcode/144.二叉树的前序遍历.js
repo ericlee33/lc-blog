@@ -24,10 +24,15 @@ var preorderTraversal = function(root) {
     return arr
 };
 
-// 
 var preorderTraversal = function(root) {
     if(!root) return []
-    const stack = []
     const ans = []
-    for(let i=0;i<)
+    const stack = [root]
+    while(stack.length) {
+        const node = stack.pop()
+        ans.push(node.val)
+        node.right && stack.push(node.right)
+        node.left && stack.push(node.left)
+    }
+    return ans
 };

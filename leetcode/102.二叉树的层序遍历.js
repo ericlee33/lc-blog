@@ -10,9 +10,9 @@
  * @param {TreeNode} root
  * @return {number[][]}
  */
-var levelOrder = function (root) {
-    if(!root) {
-        return []
+var levelOrder = function(root) {
+    if (!root) {
+        return [];
     }
     const res = [];
     /** 第一次用成了stack */
@@ -30,7 +30,7 @@ var levelOrder = function (root) {
         res.push(row);
     }
 
-    return res
+    return res;
 };
 
 const obj = {
@@ -48,4 +48,4 @@ const obj = {
         val: 3,
     },
 };
-console.log(levelOrder(obj))
+console.log(levelOrder(obj));
