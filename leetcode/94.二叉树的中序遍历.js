@@ -10,22 +10,22 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
- var inorderTraversal = function (root) {
+var inorderTraversal = function(root) {
     if (!root) return [];
 
-    const stack = [],
-        res = [];
+    const ans = [],
+        stack = [];
     let node = root;
-
+    
     while (node || stack.length) {
+        // 将全部left node放到stack
         while (node) {
             stack.push(node);
             node = node.left;
         }
-
         node = stack.pop();
-        res.push(node.val);
-        stack.push(node.right);
+        ans.push(node.val);
+        node = node.right;
     }
-    return res;
+    return ans;
 };
