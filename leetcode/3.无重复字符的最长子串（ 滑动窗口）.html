@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3.无重复字符的最长子串（ 滑动窗口） | Secret Base</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/lc-blog/assets/css/0.styles.7808a4ea.css" as="style"><link rel="preload" href="/lc-blog/assets/js/app.0bee913a.js" as="script"><link rel="preload" href="/lc-blog/assets/js/2.64e2d1ea.js" as="script"><link rel="preload" href="/lc-blog/assets/js/54.66d849a3.js" as="script"><link rel="prefetch" href="/lc-blog/assets/js/10.83d056c4.js"><link rel="prefetch" href="/lc-blog/assets/js/11.326d1f69.js"><link rel="prefetch" href="/lc-blog/assets/js/12.57719e5d.js"><link rel="prefetch" href="/lc-blog/assets/js/13.ca866e21.js"><link rel="prefetch" href="/lc-blog/assets/js/14.03fc0493.js"><link rel="prefetch" href="/lc-blog/assets/js/15.4b5f8870.js"><link rel="prefetch" href="/lc-blog/assets/js/16.5e547168.js"><link rel="prefetch" href="/lc-blog/assets/js/17.622fd546.js"><link rel="prefetch" href="/lc-blog/assets/js/18.2c412d04.js"><link rel="prefetch" href="/lc-blog/assets/js/19.d8d27cd1.js"><link rel="prefetch" href="/lc-blog/assets/js/20.430f1846.js"><link rel="prefetch" href="/lc-blog/assets/js/21.6002080c.js"><link rel="prefetch" href="/lc-blog/assets/js/22.791b97ab.js"><link rel="prefetch" href="/lc-blog/assets/js/23.e4db41a0.js"><link rel="prefetch" href="/lc-blog/assets/js/24.0f9367d2.js"><link rel="prefetch" href="/lc-blog/assets/js/25.8c38998b.js"><link rel="prefetch" href="/lc-blog/assets/js/26.b94b5214.js"><link rel="prefetch" href="/lc-blog/assets/js/27.efbef9ef.js"><link rel="prefetch" href="/lc-blog/assets/js/28.9f0bce8e.js"><link rel="prefetch" href="/lc-blog/assets/js/29.1d3970cd.js"><link rel="prefetch" href="/lc-blog/assets/js/3.7ae43e34.js"><link rel="prefetch" href="/lc-blog/assets/js/30.88a2e294.js"><link rel="prefetch" href="/lc-blog/assets/js/31.fa814325.js"><link rel="prefetch" href="/lc-blog/assets/js/32.4a7da6d1.js"><link rel="prefetch" href="/lc-blog/assets/js/33.8aae7e19.js"><link rel="prefetch" href="/lc-blog/assets/js/34.e09b2433.js"><link rel="prefetch" href="/lc-blog/assets/js/35.95f5e266.js"><link rel="prefetch" href="/lc-blog/assets/js/36.8843ed5c.js"><link rel="prefetch" href="/lc-blog/assets/js/37.8c01dae4.js"><link rel="prefetch" href="/lc-blog/assets/js/38.afd56bb7.js"><link rel="prefetch" href="/lc-blog/assets/js/39.a3a43c61.js"><link rel="prefetch" href="/lc-blog/assets/js/4.4d31d94d.js"><link rel="prefetch" href="/lc-blog/assets/js/40.b9b94f0f.js"><link rel="prefetch" href="/lc-blog/assets/js/41.d5ed49ba.js"><link rel="prefetch" href="/lc-blog/assets/js/42.f96f3ec2.js"><link rel="prefetch" href="/lc-blog/assets/js/43.a60405ed.js"><link rel="prefetch" href="/lc-blog/assets/js/44.1138cb0b.js"><link rel="prefetch" href="/lc-blog/assets/js/45.664df48b.js"><link rel="prefetch" href="/lc-blog/assets/js/46.0d3a68c2.js"><link rel="prefetch" href="/lc-blog/assets/js/47.3c5040a0.js"><link rel="prefetch" href="/lc-blog/assets/js/48.44e0f85b.js"><link rel="prefetch" href="/lc-blog/assets/js/49.07035397.js"><link rel="prefetch" href="/lc-blog/assets/js/5.569bfa89.js"><link rel="prefetch" href="/lc-blog/assets/js/50.a4758b79.js"><link rel="prefetch" href="/lc-blog/assets/js/51.34800d7c.js"><link rel="prefetch" href="/lc-blog/assets/js/52.dd580962.js"><link rel="prefetch" href="/lc-blog/assets/js/53.07d93c75.js"><link rel="prefetch" href="/lc-blog/assets/js/55.95813a49.js"><link rel="prefetch" href="/lc-blog/assets/js/56.8765b0e4.js"><link rel="prefetch" href="/lc-blog/assets/js/57.085ac6cd.js"><link rel="prefetch" href="/lc-blog/assets/js/58.5fe1a3e4.js"><link rel="prefetch" href="/lc-blog/assets/js/59.ca00e81c.js"><link rel="prefetch" href="/lc-blog/assets/js/6.498ab014.js"><link rel="prefetch" href="/lc-blog/assets/js/60.9cfe9210.js"><link rel="prefetch" href="/lc-blog/assets/js/61.d0ffd58c.js"><link rel="prefetch" href="/lc-blog/assets/js/62.d0473e35.js"><link rel="prefetch" href="/lc-blog/assets/js/63.c01fd873.js"><link rel="prefetch" href="/lc-blog/assets/js/64.fb4dc5f2.js"><link rel="prefetch" href="/lc-blog/assets/js/65.6e681280.js"><link rel="prefetch" href="/lc-blog/assets/js/66.b42884cc.js"><link rel="prefetch" href="/lc-blog/assets/js/67.bcd6b999.js"><link rel="prefetch" href="/lc-blog/assets/js/68.a36ad05f.js"><link rel="prefetch" href="/lc-blog/assets/js/69.89ba0f4a.js"><link rel="prefetch" href="/lc-blog/assets/js/7.7e550121.js"><link rel="prefetch" href="/lc-blog/assets/js/70.a8cbb79d.js"><link rel="prefetch" href="/lc-blog/assets/js/8.f937cda0.js"><link rel="prefetch" href="/lc-blog/assets/js/9.b751af4a.js">
+    <link rel="stylesheet" href="/lc-blog/assets/css/0.styles.7808a4ea.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/lc-blog/" class="home-link router-link-active"><!----> <span class="site-name">Secret Base</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/lc-blog/leetcode/" class="nav-link router-link-active">
+  Leetcode
+</a></div><div class="nav-item"><a href="/lc-blog/jzoffer/" class="nav-link">
+  剑指offer
+</a></div><div class="nav-item"><a href="/lc-blog/custom/" class="nav-link">
+  自定义
+</a></div><div class="nav-item"><a href="https://github.com/ericlee33" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/lc-blog/leetcode/" class="nav-link router-link-active">
+  Leetcode
+</a></div><div class="nav-item"><a href="/lc-blog/jzoffer/" class="nav-link">
+  剑指offer
+</a></div><div class="nav-item"><a href="/lc-blog/custom/" class="nav-link">
+  自定义
+</a></div><div class="nav-item"><a href="https://github.com/ericlee33" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Leetcode</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/lc-blog/leetcode/计算器.html" class="sidebar-link">计算器</a></li><li><a href="/lc-blog/leetcode/" aria-current="page" class="sidebar-link">README</a></li><li><a href="/lc-blog/leetcode/1.两数之和（hashmap）.html" class="sidebar-link">1.两数之和（hashmap）</a></li><li><a href="/lc-blog/leetcode/2.两数相加（链表，进位）.html" class="sidebar-link">2.两数相加（链表，进位）</a></li><li><a href="/lc-blog/leetcode/3.无重复字符的最长子串（ 滑动窗口）.html" class="active sidebar-link">3.无重复字符的最长子串（ 滑动窗口）</a></li><li><a href="/lc-blog/leetcode/4.寻找两个正序数组的中位数（二分） .html" class="sidebar-link">4.寻找两个正序数组的中位数（二分）</a></li><li><a href="/lc-blog/leetcode/5.最长回文子串（dp）.html" class="sidebar-link">5.最长回文子串（dp）</a></li><li><a href="/lc-blog/leetcode/9.回文数（reverse）.html" class="sidebar-link">9.回文数（reverse）</a></li><li><a href="/lc-blog/leetcode/11. 盛最多水的容器（双指针）.html" class="sidebar-link">11. 盛最多水的容器（双指针）</a></li><li><a href="/lc-blog/leetcode/14.最长公共前缀（）.html" class="sidebar-link">14.最长公共前缀（）</a></li><li><a href="/lc-blog/leetcode/15.三数之和（双指针+循环）.html" class="sidebar-link">15.三数之和（双指针+循环）</a></li><li><a href="/lc-blog/leetcode/16.最接近的三数之和（双指针+循环）.html" class="sidebar-link">16.最接近的三数之和（双指针+循环）</a></li><li><a href="/lc-blog/leetcode/17.电话号码的字母组合（dfs）.html" class="sidebar-link">17.电话号码的字母组合（dfs）</a></li><li><a href="/lc-blog/leetcode/19.删除链表的倒数第N个结点（链表）.html" class="sidebar-link">19.删除链表的倒数第N个结点（链表）</a></li><li><a href="/lc-blog/leetcode/20.有效的括号（hashMap）.html" class="sidebar-link">20.有效的括号（hashMap）</a></li><li><a href="/lc-blog/leetcode/21.合并两个有序链表（递归）.html" class="sidebar-link">21.合并两个有序链表（递归）</a></li><li><a href="/lc-blog/leetcode/22.括号生成（回溯）.html" class="sidebar-link">22.括号生成（回溯）</a></li><li><a href="/lc-blog/leetcode/26.删除有序数组中的重复项.html" class="sidebar-link">26.删除有序数组中的重复项</a></li><li><a href="/lc-blog/leetcode/27.移除元素（双指针）.html" class="sidebar-link">27.移除元素（双指针）</a></li><li><a href="/lc-blog/leetcode/28.实现strStr()（双指针）.html" class="sidebar-link">28.实现strStr()（双指针）</a></li><li><a href="/lc-blog/leetcode/34. 在排序数组中查找元素的第一个和最后一个位置（二分）.html" class="sidebar-link">34. 在排序数组中查找元素的第一个和最后一个位置（二分）</a></li><li><a href="/lc-blog/leetcode/35. 搜索插入位置（二分法）.html" class="sidebar-link">35. 搜索插入位置（二分法）</a></li><li><a href="/lc-blog/leetcode/42.接雨水（双指针）.html" class="sidebar-link">42.接雨水（双指针）</a></li><li><a href="/lc-blog/leetcode/46.全排列（回溯）.html" class="sidebar-link">46.全排列（回溯）</a></li><li><a href="/lc-blog/leetcode/53.最大自序和（dp）.html" class="sidebar-link">53.最大自序和（dp）</a></li><li><a href="/lc-blog/leetcode/62. 不同路径（dp）.html" class="sidebar-link">62. 不同路径（dp）</a></li><li><a href="/lc-blog/leetcode/66.加一（数组进位）.html" class="sidebar-link">66.加一（数组进位）</a></li><li><a href="/lc-blog/leetcode/83. 删除排序链表中的重复元素（链表）.html" class="sidebar-link">83. 删除排序链表中的重复元素（链表）</a></li><li><a href="/lc-blog/leetcode/88. 合并两个有序数组（双指针）.html" class="sidebar-link">88. 合并两个有序数组（双指针）</a></li><li><a href="/lc-blog/leetcode/94.二叉树的中序遍历.html" class="sidebar-link">94.二叉树的中序遍历</a></li><li><a href="/lc-blog/leetcode/102.二叉树的层序遍历.html" class="sidebar-link">102.二叉树的层序遍历</a></li><li><a href="/lc-blog/leetcode/104.二叉树最大深度.html" class="sidebar-link">104.二叉树最大深度</a></li><li><a href="/lc-blog/leetcode/121.买卖股票的最佳时机（dp）.html" class="sidebar-link">121.买卖股票的最佳时机（dp）</a></li><li><a href="/lc-blog/leetcode/141.环形链表.html" class="sidebar-link">141.环形链表</a></li><li><a href="/lc-blog/leetcode/144.二叉树前序遍历.html" class="sidebar-link">144.二叉树前序遍历</a></li><li><a href="/lc-blog/leetcode/144.二叉树的前序遍历.html" class="sidebar-link">144.二叉树的前序遍历</a></li><li><a href="/lc-blog/leetcode/145.二叉树的后序遍历.html" class="sidebar-link">145.二叉树的后序遍历</a></li><li><a href="/lc-blog/leetcode/155.最小栈.html" class="sidebar-link">155.最小栈</a></li><li><a href="/lc-blog/leetcode/160.相交链表.html" class="sidebar-link">160.相交链表</a></li><li><a href="/lc-blog/leetcode/206.反转链表.html" class="sidebar-link">206.反转链表</a></li><li><a href="/lc-blog/leetcode/226.翻转二叉树（递归）.html" class="sidebar-link">226.翻转二叉树（递归）</a></li><li><a href="/lc-blog/leetcode/617.合并二叉树（递归）.html" class="sidebar-link">617.合并二叉树（递归）</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</span>
+
+
+<span class="token comment">/**
+ * @param {string} s
+ * @return {number}
+ */</span>
+<span class="token comment">/**
+ * 解题思路-需要用到Map
+ * 1.先找出所有不包含重复字符的子串
+ * 2.找出长度最大的子串，返回其长度
+ *
+ * 那么如何找出所有不包含重复字符的子串？
+ * 1.用双指针维护一个滑动窗口，来剪切子串 js中slice也是滑动窗口
+ * 如何遍历？
+ * 2.不断移动右指针，遇到重复字符，就把左指针移到重复字符的下一位
+ *
+ * 3.移动过程中，记录所有窗口的长度，并返回最大值
+ */</span>
+<span class="token comment">// var lengthOfLongestSubstring = function (s) {</span>
+<span class="token comment">//     let l = 0;</span>
+<span class="token comment">//     // 记录窗口长度</span>
+<span class="token comment">//     let res = 0;</span>
+
+<span class="token comment">//     const map = new Map();</span>
+
+<span class="token comment">//     // 不断移动右指针</span>
+<span class="token comment">//     for (let r = 0; r &lt; s.length; r += 1) {</span>
+<span class="token comment">//         //遇到重复字符 左指针移动，如何知道当前字符是重复字符？建立map 移动右指针存值和下标</span>
+<span class="token comment">//         //注意点：要判断一下 重复字符下标必须在滑动窗口里面 所以下标大于左指针位置</span>
+
+<span class="token comment">//         if (map.has(s[r]) &amp;&amp; map.get(s[r]) &gt;= l) {</span>
+<span class="token comment">//             l = map.get(s[r]) + 1;</span>
+<span class="token comment">//         }</span>
+
+<span class="token comment">//         res = Math.max(res, r - l + 1); //新窗口长度 取大的</span>
+
+<span class="token comment">//         map.set(s[r], r);</span>
+<span class="token comment">//     }</span>
+
+<span class="token comment">//     return res;</span>
+<span class="token comment">// };</span>
+
+<span class="token comment">// 滑动窗口</span>
+<span class="token keyword">var</span> <span class="token function-variable function">lengthOfLongestSubstring</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 每一次遍历，就把最新当前字母的最后出现的index更新</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> right <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> right <span class="token operator">&lt;</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> right<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// if (map.get(str[right]) !== undefined)</span>
+        <span class="token comment">// 和 map.has(str[right])是一个含义</span>
+
+        <span class="token comment">// 如果当前字母已经在map中出现过，那么left的位置就要从这个位置+1</span>
+        <span class="token comment">// 'abba'这个例子表示不能如果left已经滑动了，不能再往回滑（会出现a 的index是0，如果不限制会导致left往回了）</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> left <span class="token operator">&lt;</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            left <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// 每一次循环都要计算，right每一次都会更新</span>
+        res <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        map<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">lengthOfLongestSubstring</span><span class="token punctuation">(</span><span class="token string">'abba'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 输入: s = &quot;pwwkew&quot;</span>
+<span class="token comment">// 输出: 3</span>
+<span class="token comment">// 解释: 因为无重复字符的最长子串是 &quot;wke&quot;，所以其长度为 3。</span>
+<span class="token comment">//      请注意，你的答案必须是 子串 的长度，&quot;pwke&quot; 是一个子序列，不是子串。</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/lc-blog/leetcode/2.两数相加（链表，进位）.html" class="prev">
+        2.两数相加（链表，进位）
+      </a></span> <span class="next"><a href="/lc-blog/leetcode/4.寻找两个正序数组的中位数（二分） .html">
+        4.寻找两个正序数组的中位数（二分）
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/lc-blog/assets/js/app.0bee913a.js" defer></script><script src="/lc-blog/assets/js/2.64e2d1ea.js" defer></script><script src="/lc-blog/assets/js/54.66d849a3.js" defer></script>
+  </body>
+</html>
